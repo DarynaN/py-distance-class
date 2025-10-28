@@ -3,7 +3,7 @@ from __future__ import annotations
 
 class Distance:
 
-    def __init__(self, km: int) -> None:
+    def __init__(self, km: int | float) -> None:
         self.km = km
 
     def __str__(self) -> str:
@@ -27,8 +27,6 @@ class Distance:
             self.km += other.km
         elif isinstance(other, (int, float)):
             self.km += other
-        else:
-            raise TypeError(f"Unsupported operand type for +: {type(other)}")
         return self
 
     def __truediv__(self, other: int | float) -> Distance:
